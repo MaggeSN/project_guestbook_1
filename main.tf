@@ -13,22 +13,22 @@ provider "azurerm" {
 }
 
 module "containers" {
-    source = "./modules/containers"
+  source = "./modules/containers"
 
-    resource_group_name        = module.resourceGroup.name
-    location                   = module.resourceGroup.location
+  resource_group_name = module.resourceGroup.name
+  location            = module.resourceGroup.location
 }
 module "cosmosDB" {
-    source = "./modules/cosmosDB"
+  source = "./modules/cosmosDB"
 
-    resource_group_name = module.resourceGroup.name
-    location            = module.resourceGroup.location
+  resource_group_name = module.resourceGroup.name
+  location            = module.resourceGroup.location
 }
 module "network" {
-    source = "./modules/network"
-    resource_group_name = module.resourceGroup.name
-    resource_group_location = module.resourceGroup.location
+  source                  = "./modules/network"
+  resource_group_name     = module.resourceGroup.name
+  resource_group_location = module.resourceGroup.location
 }
 module "resourceGroup" {
-    source = "./modules/resourceGroup"
+  source = "./modules/resourceGroup"
 }
