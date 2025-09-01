@@ -11,3 +11,17 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+
+module "containers" {
+    source = "./modules/containers"
+}
+module "cosmosDB" {
+    source = "./modules/cosmosDB"
+}
+module "network" {
+    source = "./modules/network"
+}
+module "resourceGroup" {
+    source = "./modules/resourceGroup"
+}
