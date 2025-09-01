@@ -15,8 +15,8 @@ provider "azurerm" {
 module "containers" {
     source = "./modules/containers"
 
-    resource_group_name        = module.guestbook_rg.resource_group_name
-    location                   = module.guestbook_rg.location
+    resource_group_name        = module.resourceGroup.name
+    location                   = module.resourceGroup.location
     log_analytics_workspace_id = module.network.log_analytics_workspace_id
 }
 module "cosmosDB" {
