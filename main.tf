@@ -12,7 +12,6 @@ provider "azurerm" {
   features {}
 }
 
-
 module "containers" {
     source = "./modules/containers"
 }
