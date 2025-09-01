@@ -21,6 +21,9 @@ module "containers" {
 }
 module "cosmosDB" {
     source = "./modules/cosmosDB"
+
+    resource_group_name = module.resourceGroup.name
+    location            = module.resourceGroup.location
 }
 module "network" {
     source = "./modules/network"
