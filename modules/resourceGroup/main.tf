@@ -1,4 +1,4 @@
-resource "azurerm_project_guestbook" "ressursgruppe" {
-  name     = "project_guestbook"
-  location = "Norway East" 
+resource "azurerm_resource_group" "rg" {
+  name     = "guestbook_rg"
+  location = "East US" 
 }
