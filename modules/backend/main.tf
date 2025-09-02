@@ -1,4 +1,3 @@
-
 resource "azurerm_storage_account" "backend_storage_account" {
   name                     = "gansketilfeldignavn13"
   resource_group_name      = var.rg_name
