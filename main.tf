@@ -34,15 +34,15 @@ module "cosmosDB" {
 
 import {
   to = module.network.azurerm_virtual_network.vnet
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook"
 }
 import {
   to = module.network.azurerm_subnet.containerapps
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook/subnets/subnet_containerapps"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook/subnets/subnet_containerapps"
 }
 import {
   to = module.network.azurerm_subnet.cosmosdb
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook/subnets/subnet_cosmosdb"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook/subnets/subnet_cosmosdb"
 }
 
 module "network" {
@@ -53,7 +53,7 @@ module "network" {
 
 import {
   to = module.resourceGroup.azurerm_resource_group.rg
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2"
 }
 
 module "resourceGroup" {
@@ -70,25 +70,25 @@ module "backend" {
 
 import {
   to = module.backend.azurerm_storage_account.backend_storage_account
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Storage/storageAccounts/gansketilfeldignavn13"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.Storage/storageAccounts/gansketilfeldignavn13"
 }
 import {
   to = module.backend.azurerm_storage_container.backend_storage_container
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Storage/storageAccounts/gansketilfeldignavn13/blobServices/default/containers/backendcontainer"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.Storage/storageAccounts/gansketilfeldignavn13/blobServices/default/containers/backendcontainer"
 }
 import {
   to = module.containers.azurerm_container_app.backend_container
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/containerApps/backend_container"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/containerApps/backend_container"
 }
 import {
   to = module.containers.azurerm_container_app_environment.container_environment
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/managedEnvironments/container_environment"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/managedEnvironments/container_environment"
 }
 import {
   to = module.cosmosDB.azurerm_cosmosdb_account.db_account
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.DocumentDB/databaseAccounts/tfex-cosmos-db-account-1"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.DocumentDB/databaseAccounts/tfex-cosmos-db-account-1"
 }
 import {
   to = module.cosmosDB.azurerm_cosmosdb_mongo_database.db
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.DocumentDB/databaseAccounts/tfex-cosmos-db-account-1/mongodbDatabases/projectguestbook_mongodb"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.DocumentDB/databaseAccounts/tfex-cosmos-db-account-1/mongodbDatabases/projectguestbook_mongodb"
 }
