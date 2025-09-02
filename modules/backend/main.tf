@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "backend_storage_account" {
-  name                     = "backendstorageaccount${random_integer.suffix.result}"
+  name                     = "gansketilfeldignavn13"
   resource_group_name      = var.rg_name
   location                 = var.location
   account_tier             = "Standard"
