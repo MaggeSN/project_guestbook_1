@@ -1,5 +1,5 @@
 resource "azurerm_cosmosdb_account" "db_account" {
-  name                = "tfex-cosmos-db-account"
+  name                = "tfex-cosmos-db-account-1"
   location            = var.location
   resource_group_name = var.resource_group_name
   offer_type          = "Standard"
