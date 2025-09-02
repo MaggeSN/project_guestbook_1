@@ -74,15 +74,15 @@ import {
 }
 import {
   to = module.backend.azurerm_storage_container.backend_storage_container
-  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.Storage/storageAccounts/gansketilfeldignavn13/containers/backendcontainer"
+  id = "gansketilfeldignavn13/containers/backendcontainer"
 }
 import {
   to = module.containers.azurerm_container_app.backend_container
-  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/containerApps/backend_container"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/containerApps/backend-app"
 }
 import {
   to = module.containers.azurerm_container_app_environment.container_environment
-  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/managedEnvironments/container_environment"
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/managedEnvironments/container-environment"
 }
 import {
   to = module.cosmosDB.azurerm_cosmosdb_account.db_account
