@@ -76,9 +76,10 @@ import {
   to = module.backend.azurerm_storage_container.backend_storage_container
   id = "https://gansketilfeldignavn13.blob.core.windows.net/backendcontainer"
 }
+
 import {
-  to = module.containers.azurerm_container_app.backend_container
-  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/containerApps/backend-app"
+  to = module.containers.azurerm_container_app_environment.container_environment
+  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/managedEnvironments/container-environment"
 }
 import {
   to = module.cosmosDB.azurerm_cosmosdb_account.db_account
