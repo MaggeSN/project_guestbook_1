@@ -38,11 +38,11 @@ import {
 }
 import {
   to = module.network.azurerm_subnet.containerapps
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook/subnets/subnet_containerapps"
+  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook/subnets/subnet-containerapps"
 }
 import {
   to = module.network.azurerm_subnet.cosmosdb
-  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook/subnets/subnet_cosmosdb"
+  id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook/subnets/subnet-cosmosdb"
 }
 
 module "network" {
