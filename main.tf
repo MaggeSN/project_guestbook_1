@@ -24,23 +24,39 @@ module "containers" {
   resource_group_name = module.resourceGroup.name
   location            = module.resourceGroup.location
 }
+
 module "cosmosDB" {
   source = "./modules/cosmosDB"
 
   resource_group_name = module.resourceGroup.name
   location            = module.resourceGroup.location
 }
+
+import {
+  to = module.network.azurerm_virtual_network.vnet
+  id = "/subscriptions/${secrets.ARM_SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.Network/virtualNetworks/vnet_project_guestbook"
+}
+
 module "network" {
   source                  = "./modules/network"
   resource_group_name     = module.resourceGroup.name
   resource_group_location = module.resourceGroup.location
 }
+
+import {
+  to = module.resourceGroup.azurerm_resource_group.rg
+  id = "/subscriptions/${secrets.ARM_SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2"
+}
+
 module "resourceGroup" {
   source = "./modules/resourceGroup"
+
 }
+
 module "backend" {
   source = "./modules/backend"
 
   rg_name  = module.resourceGroup.name
   location = module.resourceGroup.location
 }
+
