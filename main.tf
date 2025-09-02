@@ -1,4 +1,10 @@
 terraform {
+  backend "azurerm" {
+    resource_group_name  = "guestbook_rg_2"
+    storage_account_name = "gansketilfeldignavn13"
+    container_name       = "backendcontainer"
+    key                  = "terraform.tfstate"
+  }
   required_version = "~>1.0"
   required_providers {
     azurerm = {
