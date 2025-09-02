@@ -19,3 +19,11 @@ resource "azurerm_container_app" "backend_container" {
     }
   }
 }
+import {
+  to = azurerm_container_app.backend_container
+  id = "/subscriptions/${ secrets.ARM_SUBSCRIPTION_ID }/resourceGroups/guestbook_rg_2/providers/Microsoft.App/containerApps/backend_container"
+}
+import {
+  to = azurerm_container_app_environment.container_environment
+  id = "/subscriptions/${ secrets.ARM_SUBSCRIPTION_ID }/resourceGroups/guestbook_rg_2/providers/Microsoft.App/managedEnvironments/container_environment"
+}
