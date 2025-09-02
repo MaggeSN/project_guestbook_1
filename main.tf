@@ -81,10 +81,6 @@ import {
   id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/containerApps/backend-app"
 }
 import {
-  to = module.containers.azurerm_container_app_environment.container_environment
-  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.App/managedEnvironments/container-environment"
-}
-import {
   to = module.cosmosDB.azurerm_cosmosdb_account.db_account
   id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.DocumentDB/databaseAccounts/tfex-cosmos-db-account-1"
 }
