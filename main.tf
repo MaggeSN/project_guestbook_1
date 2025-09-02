@@ -74,7 +74,7 @@ import {
 }
 import {
   to = module.backend.azurerm_storage_container.backend_storage_container
-  id = "gansketilfeldignavn13/containers/backendcontainer"
+  id = "gansketilfeldignavn13/backendcontainer"
 }
 import {
   to = module.containers.azurerm_container_app.backend_container
