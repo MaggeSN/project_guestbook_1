@@ -59,4 +59,28 @@ module "backend" {
   rg_name  = module.resourceGroup.name
   location = module.resourceGroup.location
 }
-
+    
+import {
+  to = module.backend.azurerm_storage_account.backend_storage_account
+  id = "/subscriptions/${ secrets.ARM_SUBSCRIPTION_ID }/resourceGroups/guestbook_rg_2/providers/Microsoft.Storage/storageAccounts/gansketilfeldignavn13"
+}
+import {
+  to = module.backend.azurerm_storage_container.backend_storage_container
+  id = "/subscriptions/${ secrets.ARM_SUBSCRIPTION_ID }/resourceGroups/guestbook_rg_2/providers/Microsoft.Storage/storageAccounts/gansketilfeldignavn13/blobServices/default/containers/backendcontainer"
+}
+import {
+  to = module.containers.azurerm_container_app.backend_container
+  id = "/subscriptions/${ secrets.ARM_SUBSCRIPTION_ID }/resourceGroups/guestbook_rg_2/providers/Microsoft.App/containerApps/backend_container"
+}
+import {
+  to = module.containers.azurerm_container_app_environment.container_environment
+  id = "/subscriptions/${ secrets.ARM_SUBSCRIPTION_ID }/resourceGroups/guestbook_rg_2/providers/Microsoft.App/managedEnvironments/container_environment"
+}
+import {
+  to = module.cosmosDB.azurerm_cosmosdb_account.db_account
+  id = "/subscriptions/${ secrets.ARM_SUBSCRIPTION_ID }/resourceGroups/guestbook_rg_2/providers/Microsoft.DocumentDB/databaseAccounts/tfex-cosmos-db-account-1"
+}
+import {
+  to = module.cosmosDB.azurerm_cosmosdb_mongo_database.db
+  id = "/subscriptions/${ secrets.ARM_SUBSCRIPTION_ID }/resourceGroups/guestbook_rg_2/providers/Microsoft.DocumentDB/databaseAccounts/tfex-cosmos-db-account-1/mongodbDatabases/projectguestbook_mongodb"
+}
