@@ -74,7 +74,7 @@ import {
 }
 import {
   to = module.backend.azurerm_storage_container.backend_storage_container
-  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.Storage/storageAccounts/gansketilfeldignavn13/containers/backendcontainer"
+  id = "gansketilfeldignavn13/backendcontainer"
 }
 import {
   to = module.containers.azurerm_container_app.backend_container
