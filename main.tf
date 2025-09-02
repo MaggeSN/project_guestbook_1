@@ -67,7 +67,7 @@ module "backend" {
   rg_name  = module.resourceGroup.name
   location = module.resourceGroup.location
 }
-    
+
 import {
   to = module.backend.azurerm_storage_account.backend_storage_account
   id = "/subscriptions/${var.subscription_id}/resourceGroups/guestbook_rg_2/providers/Microsoft.Storage/storageAccounts/gansketilfeldignavn13"
