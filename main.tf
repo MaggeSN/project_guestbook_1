@@ -32,3 +32,9 @@ module "network" {
 module "resourceGroup" {
   source = "./modules/resourceGroup"
 }
+module "backend" {
+  source = "./modules/backend"
+
+  rg_name  = module.resourceGroup.name
+  location = module.resourceGroup.location
+}
