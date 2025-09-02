@@ -52,6 +52,9 @@ on:
 permissions:
   contents: read
 
+env:
+  TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+  
 jobs:
   terraform:
     name: 'Terraform'
