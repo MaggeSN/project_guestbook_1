@@ -38,5 +38,5 @@ resource "azurerm_private_endpoint" "db_endpoint" {
     private_connection_resource_id = var.cosmosdb_account_id
     subresource_names              = ["mongodb"]
   }
-  
+
 }

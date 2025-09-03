@@ -23,8 +23,8 @@ module "containers" {
 
   resource_group_name = module.resourceGroup.name
   location            = module.resourceGroup.location
-  subnet_id = module.network.subnet_containerapps_id
-  MONGODB_URI = module.cosmosDB.connection_string
+  subnet_id           = module.network.subnet_containerapps_id
+  MONGODB_URI         = module.cosmosDB.connection_string
 }
 
 module "cosmosDB" {

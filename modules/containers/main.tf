@@ -1,8 +1,8 @@
 resource "azurerm_container_app_environment" "container_environment" {
-  name                       = "container-environment"
-  resource_group_name        = var.resource_group_name
-  location                   = var.location
-  infrastructure_subnet_id   = var.subnet_id
+  name                     = "container-environment"
+  resource_group_name      = var.resource_group_name
+  location                 = var.location
+  infrastructure_subnet_id = var.subnet_id
 }
 
 resource "azurerm_container_app" "backend_container" {
@@ -27,7 +27,7 @@ resource "azurerm_container_app" "backend_container" {
         name  = "AUTH_TOKEN"
         value = var.AUTH_TOKEN
       }*/
-    
+
     }
   }
   ingress {

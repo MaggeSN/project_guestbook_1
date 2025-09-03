@@ -19,6 +19,6 @@ variable "vnet_address_space" {
 }
 
 variable "cosmosdb_account_id" {
-  type = string
+  type        = string
   description = "The ID of the Cosmos DB account to create a private endpoint for."
 }
