@@ -17,3 +17,8 @@ variable "vnet_address_space" {
   type    = list(string)
   default = ["10.0.0.0/16"]
 }
+
+variable "cosmosdb_account_id" {
+  type = string
+  description = "The ID of the Cosmos DB account to create a private endpoint for."
+}

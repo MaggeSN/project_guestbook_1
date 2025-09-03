@@ -27,7 +27,7 @@ resource "azurerm_container_app" "backend_container" {
         name  = "AUTH_TOKEN"
         value = var.AUTH_TOKEN
       }*/
-
+    
     }
   }
   ingress {
@@ -40,6 +40,7 @@ resource "azurerm_container_app" "backend_container" {
       percentage      = 100
     }
   }
+
 }
 
 
