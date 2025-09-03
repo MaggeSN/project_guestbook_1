@@ -4,8 +4,8 @@ variable "SUBSCRIPTION_ID" {
   sensitive   = true
 }
 variable "AUTH_TOKEN" {
-    description = "The authentication token for the backend application."
-    type        = string
-    sensitive   = true
+  description = "The authentication token for the backend application."
+  type        = string
+  sensitive   = true
 
 }
