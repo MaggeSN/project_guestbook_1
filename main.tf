@@ -38,7 +38,7 @@ module "network" {
   source                  = "./modules/network"
   resource_group_name     = module.resourceGroup.name
   resource_group_location = module.resourceGroup.location
-  cosmosdb_account_id     = module.cosmosDB.azurerm_cosmosdb_account.db_account.id
+  cosmosdb_account_id     = module.cosmosDB.account_id
 }
 
 module "resourceGroup" {
