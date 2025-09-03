@@ -9,3 +9,8 @@ variable "AUTH_TOKEN" {
   sensitive   = true
 
 }
+variable "COSMOSDB_CONNECTION" {
+  description = "The connection string for the Cosmos DB instance."
+  type        = string
+  sensitive   = true
+}
