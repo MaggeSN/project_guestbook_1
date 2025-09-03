@@ -9,7 +9,7 @@ variable "location" {
   default     = "East US"
 }
 
-variable "MONGODB_URI" {
+variable "DB_URI" {
   description = "The connection string for the Cosmos DB instance."
   type        = string
   sensitive   = true

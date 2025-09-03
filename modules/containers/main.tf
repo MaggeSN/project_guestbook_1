@@ -20,7 +20,7 @@ resource "azurerm_container_app" "backend_container" {
 
       env {
         name  = "MONGODB_URI"
-        value = var.MONGODB_URI
+        value = var.DB_URI
       }
 
       env {
