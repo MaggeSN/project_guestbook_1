@@ -45,3 +45,11 @@ resource "azurerm_cosmosdb_mongo_database" "db" {
   resource_group_name = var.resource_group_name
   account_name        = azurerm_cosmosdb_account.db_account.name
 }
+
+resource "azurerm_cosmosdb_mongo_collection" "collection" {
+  name                = "guestbook_collection"
+  resource_group_name = var.resource_group_name
+  account_name        = azurerm_cosmosdb_account.db_account.name
+  database_name       = azurerm_cosmosdb_mongo_database.db.name
+}
+
