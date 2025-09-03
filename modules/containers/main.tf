@@ -23,10 +23,10 @@ resource "azurerm_container_app" "backend_container" {
         value = var.MONGODB_URI
       }
 
-      /*env {
+      env {
         name  = "AUTH_TOKEN"
         value = var.AUTH_TOKEN
-      }*/
+      }
 
     }
   }

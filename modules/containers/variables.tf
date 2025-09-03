@@ -15,12 +15,12 @@ variable "MONGODB_URI" {
   sensitive   = true
 
 }
-/*variable "AUTH_TOKEN" {
+variable "AUTH_TOKEN" {
     description = "The authentication token for the backend application."
     type        = string
     sensitive   = true
   
-}*/
+}
 variable "subnet_id" {
   description = "The ID of the subnet to deploy the container app environment into."
   type        = string

@@ -25,6 +25,7 @@ module "containers" {
   location            = module.resourceGroup.location
   subnet_id           = module.network.subnet_containerapps_id
   MONGODB_URI         = module.cosmosDB.connection_string
+  AUTH_TOKEN          = "megahemmelig69"
 }
 
 module "cosmosDB" {
