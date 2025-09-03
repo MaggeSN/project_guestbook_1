@@ -13,7 +13,7 @@ resource "azurerm_subnet" "containerapps" {
   delegation {
     name = "delegation"
     service_delegation {
-      name    = "Microsoft.App/environments"
+      name    = "Microsoft.App/managedEnvironments"
       actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
     }
   }
