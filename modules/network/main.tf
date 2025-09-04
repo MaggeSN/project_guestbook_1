@@ -47,7 +47,7 @@ resource "azurerm_private_endpoint" "db_endpoint" {
 
 }
 resource "azurerm_private_dns_zone" "cosmosdb" {
-  name                = "privatelink.documents.azure.com"
+  name                = "privatelink.mongo.cosmos.azure.com"
   resource_group_name = var.resource_group_name
 }
 
