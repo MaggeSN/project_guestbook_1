@@ -12,7 +12,11 @@ resource "azurerm_cosmosdb_account" "db_account" {
   }
   
   capabilities {
-    name = "MongoDBEnableVCore"  // Aktiverer vCore
+    name = "EnableServerless"
+  }
+
+  capabilities {
+    name = "MongoDBv3.4"
   }
 
   public_network_access_enabled = false
@@ -33,13 +37,13 @@ resource "azurerm_cosmosdb_account" "db_account" {
 }
 
 resource "azurerm_cosmosdb_mongo_database" "db" {
-  name                = "projectguestbook_mongodb"
+  name                = "test"
   resource_group_name = var.resource_group_name
   account_name        = azurerm_cosmosdb_account.db_account.name
 }
 
 resource "azurerm_cosmosdb_mongo_collection" "collection" {
-  name                = "guestbook_collection"
+  name                = "messages"
   resource_group_name = var.resource_group_name
   account_name        = azurerm_cosmosdb_account.db_account.name
   database_name       = azurerm_cosmosdb_mongo_database.db.name
