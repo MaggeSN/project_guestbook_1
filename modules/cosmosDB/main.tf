@@ -8,4 +8,5 @@ resource "azurerm_mongo_cluster" "cluster" {
   compute_tier           = "Free"
   high_availability_mode = "Disabled"
   storage_size_in_gb     = "32"
+  version                = "8.0"
 }
