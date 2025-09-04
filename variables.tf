@@ -9,8 +9,11 @@ variable "AUTH_TOKEN" {
   sensitive   = true
 
 }
-variable "COSMOSDB_CONNECTION" {
-  description = "The connection string for the Cosmos DB instance."
+variable "MONGODB_DATABASE_NAME" {
+  description = "The name of the MongoDB database to be created."
   type        = string
-  sensitive   = true
+}
+variable "MONGODB_DATABASE_COLLECTION_NAME" {
+  description = "The name of the MongoDB collection to be created."
+  type        = string
 }

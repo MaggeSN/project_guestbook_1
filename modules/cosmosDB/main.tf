@@ -1,55 +1,29 @@
-resource "azurerm_cosmosdb_account" "db_account" {
-  name                = "tfex-cosmos-db-account-1"
-  location            = var.location
+resource "azurerm_mongo_cluster" "cosmosdb_cluster" {
+  name                   = "cosmosdb_cluster"
+  resource_group_name    = var.resource_group_name
+  location               = var.location
+  mongo_version         = "8.0"
+  administrator_username = "adminTerraform"
+  administrator_password = "passord123!"
+  shard_count            = "1"
+  compute_tier           = "Free"
+  high_availability_mode = "Disabled"
+  storage_size_in_gb     = "10"
+}
+
+resource "azurerm_mongodb_database" "db" {
+  name                = var.MONGODB_DATABASE_NAME
   resource_group_name = var.resource_group_name
-  offer_type          = "Standard"
-  kind                = "MongoDB"
+  cluster_id         = azurerm_mongodb_cluster.cluster.id
+}
 
-  automatic_failover_enabled = true
-
-  capabilities {
-    name = "EnableMongo"
-  }
+resource "azurerm_mongodb_collection" "collection" {
+  name                = var.MONGODB_DATABASE_COLLECTION_NAME
+  resource_group_name = var.resource_group_name
+  database_id        = azurerm_mongodb_database.db.id
   
-  capabilities {
-    name = "EnableServerless"
-  }
-
-  capabilities {
-    name = "MongoDBv7.0"
-  }
-
-  public_network_access_enabled = false
-  is_virtual_network_filter_enabled = true
-  ip_range_filter = ""
-
-  consistency_policy {
-    consistency_level       = "BoundedStaleness"
-    max_interval_in_seconds = 300
-    max_staleness_prefix    = 100000
-  }
-
-  geo_location {
-    location          = "westus"
-    failover_priority = 0
-  }
-
-}
-
-resource "azurerm_cosmosdb_mongo_database" "db" {
-  name                = "test"
-  resource_group_name = var.resource_group_name
-  account_name        = azurerm_cosmosdb_account.db_account.name
-}
-
-resource "azurerm_cosmosdb_mongo_collection" "collection" {
-  name                = "messages"
-  resource_group_name = var.resource_group_name
-  account_name        = azurerm_cosmosdb_account.db_account.name
-  database_name       = azurerm_cosmosdb_mongo_database.db.name
   index {
-    keys = ["_id"]
+    key    = "_id"
     unique = true
   }
 }
-
