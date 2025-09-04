@@ -64,6 +64,8 @@ jobs:
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
       TF_VAR_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       TF_VAR_AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+      TF_VAR_AUTH_TOKEN_FRONTEND: ${{ secrets.AUTH_TOKEN_FRONTEND }}
+      TF_VAR_BASE_URL: ${{ secrets.API.BASE_URL }}
       TF_VAR_COSMOSDB_CONNECTION: ${{ secrets.COSMOSDB_CONNECTION }}
       TF_VAR_MONGODB_DATABASE_NAME: ${{ secrets.MONGODB_DATABASE_NAME }}
       TF_VAR_MONGODB_DATABASE_COLLECTION_NAME: ${{ secrets.MONGODB_DATABASE_COLLECTION_NAME }}
@@ -102,6 +104,7 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
+
 
 
       
