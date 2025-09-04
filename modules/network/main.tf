@@ -38,7 +38,7 @@ resource "azurerm_private_endpoint" "db_endpoint" {
     name                           = "db_connection"
     is_manual_connection           = false
     private_connection_resource_id = var.cosmosdb_account_id
-    subresource_names              = ["mongodb"]
+    subresource_names              = ["mongoCluster"]
   }
   private_dns_zone_group {
     name                 = "db_dns_zone_group"
