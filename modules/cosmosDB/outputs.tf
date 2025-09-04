@@ -3,5 +3,5 @@ output "account_id" {
 }
 
 output "connection_string" {
-  value = azurerm_mongo_cluster.cluster.connection_strings[0]
+  value = azurerm_mongo_cluster.cluster.connection_strings[0].value
 }
