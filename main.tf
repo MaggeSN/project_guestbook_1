@@ -26,6 +26,8 @@ module "containers" {
   subnet_id           = module.network.subnet_containerapps_id
   DB_URI              = module.cosmosDB.connection_string
   AUTH_TOKEN          = var.AUTH_TOKEN
+  API_BASE_URL       = var.API_BASE_URL
+  AUTH_TOKEN_FRONTEND = var.AUTH_TOKEN_FRONTEND
 }
 
 module "cosmosDB" {
