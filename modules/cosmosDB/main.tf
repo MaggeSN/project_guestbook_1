@@ -16,7 +16,7 @@ resource "azurerm_cosmosdb_account" "db_account" {
   }
 
   capabilities {
-    name = "MongoDBv3.4"
+    name = "MongoDBv7.0"
   }
 
   public_network_access_enabled = false
