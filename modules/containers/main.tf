@@ -27,13 +27,7 @@ resource "azurerm_container_app" "backend_container" {
         name  = "AUTH_TOKEN"
         value = var.AUTH_TOKEN
       }
-
     }
-
-  }
-  scale {
-  min_replicas = 1
-  max_replicas = 3
   }
   ingress {
     external_enabled = true
