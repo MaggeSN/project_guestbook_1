@@ -1,5 +1,5 @@
 resource "azurerm_mongo_cluster" "cluster" {
-  name                   = "cosmosdb_cluster"
+  name                   = "cluster"
   resource_group_name    = var.resource_group_name
   location               = var.location
   administrator_username = "adminTerraform"
