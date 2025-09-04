@@ -25,7 +25,7 @@ resource "azurerm_subnet" "cosmosdb" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.2.0/24"]
-  private_endpoint_network_policies = "enabled"
+  private_endpoint_network_policies = "Enabled"
 }
 
 resource "azurerm_private_endpoint" "db_endpoint" {
