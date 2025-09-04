@@ -8,21 +8,9 @@ resource "azurerm_cosmosdb_account" "db_account" {
   automatic_failover_enabled = true
 
   capabilities {
-    name = "EnableAggregationPipeline"
-  }
-
-  capabilities {
-    name = "mongoEnableDocLevelTTL"
-  }
-
-  capabilities {
-    name = "MongoDBv3.4"
-  }
-
-  capabilities {
     name = "EnableMongo"
   }
-  
+
   public_network_access_enabled = false
   is_virtual_network_filter_enabled = true
   ip_range_filter = ""
@@ -35,13 +23,9 @@ resource "azurerm_cosmosdb_account" "db_account" {
 
   geo_location {
     location          = "eastus"
-    failover_priority = 1
-  }
-
-  geo_location {
-    location          = "westus"
     failover_priority = 0
   }
+
 }
 
 resource "azurerm_cosmosdb_mongo_database" "db" {
