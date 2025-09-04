@@ -53,8 +53,3 @@ module "backend" {
   rg_name  = module.resourceGroup.name
   location = module.resourceGroup.location
 }
-
-import {
-  to = module.cosmosDB.azurerm_cosmosdb_account.db_account
-  id = "/subscriptions/${var.SUBSCRIPTION_ID}/resourceGroups/guestbook_rg_2/providers/Microsoft.DocumentDB/databaseAccounts/tfex-cosmos-db-account-1"
-}
