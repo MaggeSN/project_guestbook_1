@@ -39,5 +39,21 @@ resource "azurerm_private_endpoint" "db_endpoint" {
     private_connection_resource_id = var.cosmosdb_account_id
     subresource_names              = ["mongodb"]
   }
+  private_dns_zone_group {
+    name                 = "db_dns_zone_group"
+    private_dns_zone_ids = [azurerm_private_dns_zone.cosmosdb.id]
+  }
 
+}
+resource "azurerm_private_dns_zone" "cosmosdb" {
+  name                = "privatelink.mongo.cosmos.azure.com"
+  resource_group_name = var.resource_group_name
+}
+
+resource "azurerm_private_dns_zone_virtual_network_link" "cosmosdb_link" {
+  name                  = "cosmosdb-dns-link"
+  resource_group_name   = var.resource_group_name
+  private_dns_zone_name = azurerm_private_dns_zone.cosmosdb.name
+  virtual_network_id    = azurerm_virtual_network.vnet.id
+  registration_enabled  = false
 }

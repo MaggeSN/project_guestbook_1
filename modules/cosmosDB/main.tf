@@ -22,6 +22,10 @@ resource "azurerm_cosmosdb_account" "db_account" {
   capabilities {
     name = "EnableMongo"
   }
+  
+  public_network_access_enabled = false
+  is_virtual_network_filter_enabled = true
+  ip_range_filter = ""
 
   consistency_policy {
     consistency_level       = "BoundedStaleness"
