@@ -17,3 +17,16 @@ variable "MONGODB_DATABASE_COLLECTION_NAME" {
   description = "The name of the MongoDB collection to be created."
   type        = string
 }
+
+variable "API_BASE_URL" {
+  description = "The base URL for the frontend application."
+  type        = string
+  
+}
+
+variable "AUTH_TOKEN_FRONTEND" {
+  description = "The authentication token for the frontend application."
+  type        = string
+  sensitive   = true
+
+}

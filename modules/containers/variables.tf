@@ -21,7 +21,21 @@ variable "AUTH_TOKEN" {
   sensitive   = true
 
 }
+
+variable "API_BASE_URL" {
+  description = "The base URL for the frontend application."
+  type        = string
+}
+
+variable "AUTH_TOKEN_FRONTEND" {
+  description = "The authentication token for the frontend application."
+  type        = string
+  sensitive   = true
+
+}
+
 variable "subnet_id" {
   description = "The ID of the subnet to deploy the container app environment into."
   type        = string
 }
+
