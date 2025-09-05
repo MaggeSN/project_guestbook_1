@@ -24,7 +24,7 @@ module "containers" {
   resource_group_name = module.resourceGroup.name
   location            = module.resourceGroup.location
   subnet_id           = module.network.subnet_containerapps_id
-  DB_URI              = module.cosmosDB.connection_string
+  DB_URI              = var.COSMOSDB_CONNECTION
   AUTH_TOKEN          = var.AUTH_TOKEN
   API_BASE_URL       = var.API_BASE_URL
   AUTH_TOKEN_FRONTEND = var.AUTH_TOKEN_FRONTEND
