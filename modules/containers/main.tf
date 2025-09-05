@@ -61,7 +61,7 @@ resource "azurerm_container_app" "frontend_container" {
 
       env {
         name  = "AUTH_TOKEN_FRONTEND"
-        value = var.AUTH_TOKEN_FRONTEND
+        value = var.AUTH_TOKEN
       }
     }
   }
