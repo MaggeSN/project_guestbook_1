@@ -15,7 +15,7 @@ variable "MONGODB_DATABASE_NAME" {
   type        = string
 }
 
-variable "MONGODB_DATABASE_COLLECTION_NAME" {
+variable "MONGODB_DATABASE_COLLECTION" {
   description = "The name of the MongoDB collection to be created."
   type        = string
 }

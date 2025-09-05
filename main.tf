@@ -28,6 +28,8 @@ module "containers" {
   AUTH_TOKEN          = var.AUTH_TOKEN
   API_BASE_URL       = var.API_BASE_URL
   AUTH_TOKEN_FRONTEND = var.AUTH_TOKEN_FRONTEND
+  MONGODB_DATABASE_NAME = var.MONGODB_DATABASE_NAME
+  MONGODB_DATABASE_COLLECTION = var.MONGODB_DATABASE_COLLECTION
 }
 
 module "cosmosDB" {
@@ -36,7 +38,7 @@ module "cosmosDB" {
   resource_group_name = module.resourceGroup.name
   location            = module.resourceGroup.location
   MONGODB_DATABASE_NAME = var.MONGODB_DATABASE_NAME
-  MONGODB_DATABASE_COLLECTION_NAME = var.MONGODB_DATABASE_COLLECTION_NAME
+  MONGODB_DATABASE_COLLECTION = var.MONGODB_DATABASE_COLLECTION
 }
 
 module "network" {

@@ -68,7 +68,7 @@ jobs:
       TF_VAR_API_BASE_URL: ${{ secrets.API_BASE_URL }}
       TF_VAR_COSMOSDB_CONNECTION: ${{ secrets.COSMOSDB_CONNECTION }}
       TF_VAR_MONGODB_DATABASE_NAME: ${{ secrets.MONGODB_DATABASE_NAME }}
-      TF_VAR_MONGODB_DATABASE_COLLECTION_NAME: ${{ secrets.MONGODB_DATABASE_COLLECTION_NAME }}
+      TF_VAR_MONGODB_DATABASE_COLLECTION: ${{ secrets.MONGODB_DATABASE_COLLECTION_NAME }}
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:

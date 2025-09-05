@@ -27,6 +27,15 @@ resource "azurerm_container_app" "backend_container" {
         name  = "AUTH_TOKEN"
         value = var.AUTH_TOKEN
       }
+      env {
+        name  = "MONGODB_DATABASE_NAME"
+        value = var.MONGODB_DATABASE_NAME
+      }
+
+      env {
+        name  = "MONGODB_DATABASE_COLLECTION"
+        value = var.MONGODB_DATABASE_COLLECTION
+      }
     }
   }
   ingress {
