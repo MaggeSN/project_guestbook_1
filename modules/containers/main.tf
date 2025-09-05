@@ -14,7 +14,7 @@ resource "azurerm_container_app" "backend_container" {
   template {
     container {
       name   = "backend"
-      image  = "projectguestbook.azurecr.io/pg-backend:1.4.0"
+      image  = "projectguestbook.azurecr.io/pg-backend:1.5.1"
       cpu    = 0.25
       memory = "0.5Gi"
 
